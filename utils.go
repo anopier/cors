@@ -19,7 +19,7 @@ func generateNormalHeaders(c Config) http.Header {
 		headers.Set("Access-Control-Expose-Headers", strings.Join(exposeHeaders, ","))
 	}
 	if c.AllowAllOrigins {
-		headers.Set("Access-Control-Allow-Origin", "*")
+		//headers.Set("Access-Control-Allow-Origin", "*")
 	} else {
 		headers.Set("Vary", "Origin")
 	}
@@ -46,7 +46,7 @@ func generatePreflightHeaders(c Config) http.Header {
 		headers.Set("Access-Control-Max-Age", value)
 	}
 	if c.AllowAllOrigins {
-		headers.Set("Access-Control-Allow-Origin", "*")
+		//headers.Set("Access-Control-Allow-Origin", "*")
 	} else {
 		// Always set Vary headers
 		// see https://github.com/rs/cors/issues/10,
